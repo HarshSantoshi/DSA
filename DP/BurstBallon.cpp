@@ -20,12 +20,34 @@ int solve(int i, int j, vector<int> &nums)
     }
     return dp[i][j] = maxi;
 }
+int solveTab(vector<int>&nums , int n ){
+    vector<vector<int>>dp2(n+2 , vector<int>(n+2 , 0));
+    int maxi = INT_MIN;
+    for(int i= n ;i>=1;i--){
+        for(int j= 1;j<=n;j++){
+            if(i>j){
+                continue;
+            }
+            int maxi = INT_MIN;
+            for (int idx = i; idx <= j; idx++)
+            {
+                int coins = nums[idx] * nums[i - 1] * nums[j + 1] + dp2[i][idx-1] + dp2[idx+1][j] ;
+                maxi = max(maxi, coins);
+            }
+            dp2[i][j] = maxi;
+        }
+       
+    }
+    return dp2[1][n];
+    
+}
 int maxCoins(vector<int> &nums)
 {
     int n = nums.size();
     nums.push_back(1);
     nums.insert(nums.begin(), 1);
     dp.resize(n + 1, vector<int>(n + 1, -1));
+    return solveTab(nums , n);
     return solve(1, n, nums);
 }
 int main(){

@@ -37,6 +37,7 @@ int sumK(Node * root , int k){
 }
 int main(){
     Node * root = new Node(6);
+    
     int ans =sumK(root , 5);
     return ans;
 }

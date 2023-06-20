@@ -16,7 +16,6 @@ class Solution{
         //exclude
         ans.second = max(leftAns.first , leftAns.second) + max(rightAns.first , rightAns.second);
         return ans;
-        
     }
     int getMaxSum(Node *root) 
     {

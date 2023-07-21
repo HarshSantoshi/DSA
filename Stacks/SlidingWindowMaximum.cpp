@@ -33,7 +33,6 @@ vector<int> maxSlidingWindow(vector<int> &nums, int k)
     int n = nums.size();
     vector<int> ans;
     vector<int> nger = nextGreater(nums, n);
-
     int j = 0;
     for (int i = 0; i <= n - k; i++)
     {

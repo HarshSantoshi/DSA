@@ -17,7 +17,6 @@ void find(vector<vector<int>> &adj, int src, int parent, vector<int> &dis, vecto
         {
             find(adj, neighbor, src, dis, low, vis, ans);
             low[src] = min(low[src], low[neighbor]);
-
             if (low[neighbor] > dis[src])
             {
                 ans.push_back({src, neighbor});

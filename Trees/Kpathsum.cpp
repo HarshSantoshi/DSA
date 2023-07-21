@@ -13,7 +13,6 @@ class Node {
         left = NULL ;
         right = NULL;
     }
-    
 };
 int ans =0;
 map <ll , int >mp;

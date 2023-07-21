@@ -23,7 +23,6 @@ class Solution{
         // exclude sum , include sum
         pair<int,int>p;
         p = solve(root);
-        return max(p.first , p.second);
-        
+        return max(p.first , p.second);  
     }
 };
